@@ -10,3 +10,12 @@
     font-weight: bold;
 }
 
+ 
+.cursor{
+    cursor: pointer;
+    color: white;
+}
+
+.text-decorator-none{
+    text-decoration: none;
+}

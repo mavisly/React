@@ -1,12 +1,30 @@
-.titulo{
-    color:black;
-    text-align:center;
+
+.caixa{
+    background-color: #3F51B5;
 }
 
-.img{
-    width: 200px;
-    height: 200px;
-    display: block;
-    margin: 0 auto;
-    margin-top: 30px;
+.titulo{
+   color: white !important;
+   font-weight: bold !important;
+}
+
+.botao{
+    border-color: white !important;
+    background-color: #3F51B5;
+    color: white !important;
+}
+
+.postagens{
+    background-color: white;
+}
+
+.citacao{
+    font-size: 16px;
+    color: white !important;
+}
+
+.ct-autor{
+    font-style: italic;
+    font-size: 10px;
+    color: white !important;
 }
