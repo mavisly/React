@@ -1,6 +1,8 @@
 import { Grid, Paper, Button, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
 import "./Home.css";
+import { Link } from "react-router-dom";
+import TabPostagem from "../../components/postagens/tabpostagem/TabPostagem";
 
 function Home() {
     return (
@@ -12,16 +14,20 @@ function Home() {
                         <Typography variant="h5" gutterBottom color="textPrimary" component="h5" className='citacao'>"Palavras são, na minha nada humilde opinião, nossa inesgotável fonte de magia, capazes de causar grandes sofrimentos e também de remediá-los.”</Typography>
                         <Typography gutterBottom color="textPrimary" component="h5" className='ct-autor'>-Alvo Dumbledore</Typography>
                     </Box>
-                    <Box display="flex" justifyContent="center">
-                        <Box marginRight={1}>
+                    <Link to="/posts" className="text-decorator-none">
+                        <Box display="flex" justifyContent="center">
+                            <Box marginRight={1}>
+                            </Box>
+                            <Button variant="outlined" className='botao'>Ver Postagens</Button>
                         </Box>
-                        <Button variant="outlined" className='botao'>Ver Postagens</Button>
-                    </Box>
+                    </Link>
                 </Grid>
                 <Grid item xs={6} >
                     <img src="src/assets/imagens/hogwarts.png" alt="" width="673px" height="500px" />
                 </Grid>
                 <Grid xs={12} className='postagens'>
+                    <TabPostagem />
+
                 </Grid>
             </Grid>
         </>
