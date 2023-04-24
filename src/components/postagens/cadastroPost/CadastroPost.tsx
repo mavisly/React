@@ -6,7 +6,7 @@ import Tema from '../../../models/Tema';
 import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/Service';
-import { Balcony } from '@mui/icons-material';
+
 
 function CadastroPost() {
     let navigate = useNavigate();

@@ -79,6 +79,7 @@ function CadastroTema(){
                     Formulário para Cadastro de Temas
                 </Typography>
                 <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>)=> updatedTema(e)} id="descricao" label="descricao" variant="outlined" name= "descricao"></TextField>
+                <br></br>
                 <Button type="submit" variant="contained" color="primary">
                     Finalizar
                 </Button>
@@ -88,7 +89,3 @@ function CadastroTema(){
 }
 
 export default CadastroTema;
-
-function back() {
-    throw new Error("Function not implemented.");
-}
