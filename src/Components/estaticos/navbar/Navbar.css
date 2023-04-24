@@ -1,0 +1,21 @@
+.root{
+    flex-grow: 1px;
+}
+
+.menuButton{
+    margin-right: 2px;
+}
+
+.title{
+    font-weight: bold;
+}
+
+ 
+.cursor{
+    cursor: pointer;
+    color: white;
+}
+
+.text-decorator-none{
+    text-decoration: none;
+}
