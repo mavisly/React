@@ -4,20 +4,29 @@ import Typography from '@material-ui/core/Typography';
 import { Box } from '@mui/material';
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
-import useLocalStorage from 'react-use-localstorage';
+import { useDispatch, useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import { addToken } from '../../../store/tokens/actions';
+import { PlayCircleFilledWhiteTwoTone } from '@mui/icons-material';
 
 
 function Navbar() {
-  const [token, setToken] = useLocalStorage('token');
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+);
   let navigate = useNavigate();
-  
+  const dispatch = useDispatch();
+
   function goLogout(){
-      setToken('')
+      dispatch(addToken(""));
       alert("Usuário deslogado")
       navigate('/login')
   }
-  return (
-    <AppBar position="static">
+    
+    var navbarComponent;
+
+    if(token !== ""){
+      navbarComponent = <AppBar position="static">
       <Toolbar variant="dense">
         <Link to="/" className='text-decorator-none'>
           <Box className='cursor'>
@@ -67,13 +76,15 @@ function Navbar() {
                 Logout
               </Typography>
             </Box>
-          
-
         </Box>
-
       </Toolbar>
     </AppBar>
+    }
 
+  return (
+    <>
+      {navbarComponent}
+    </>
   );
 }
 export default Navbar;
