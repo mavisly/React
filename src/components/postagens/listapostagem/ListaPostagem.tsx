@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
+import { Card, CardActions, CardContent, Button, Typography, IconButton } from '@material-ui/core';
 import { Box } from '@mui/material';
 import './ListaPostagem.css';
 import Postagem from '../../../models/Postagem';
 import { busca } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { Favorite, Share } from '@mui/icons-material';
 
 function ListaPostagem() {
-    const [posts, setPosts] = useState<Postagem[]>([])
+  const [posts, setPosts] = useState<Postagem[]>([])
   let navigate = useNavigate();
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
-);
+  );
 
   useEffect(() => {
     if (token == "") {
@@ -41,8 +42,8 @@ function ListaPostagem() {
     <>
       {
         posts.map(post => (
-          <Box m={2} >
-            <Card variant="outlined">
+          <Box m={1} >
+            <Card variant="outlined" className='style'>
               <CardContent>
                 <Typography color="textSecondary" gutterBottom>
                   Postagens
@@ -74,6 +75,12 @@ function ListaPostagem() {
                       </Button>
                     </Box>
                   </Link>
+                  <IconButton aria-label="add to favorites">
+                  <Favorite />
+                </IconButton>
+                <IconButton aria-label="share">
+                  <Share />
+                </IconButton>
                 </Box>
               </CardActions>
             </Card>
@@ -81,7 +88,7 @@ function ListaPostagem() {
         ))
       }
     </>
-    )
+  )
 }
 
 export default ListaPostagem;
